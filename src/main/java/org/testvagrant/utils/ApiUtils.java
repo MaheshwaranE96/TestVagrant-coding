@@ -16,7 +16,7 @@ public class ApiUtils {
 
     /**
      * This method returns the JsonPath object of provided json file
-     * @param pathToJsonFile - Path to the desired json file
+     * @param pathToJsonFile Path to the desired json file
      * @return io.restassured.path.json.JsonPath
      * @since 07/08/2022
      */

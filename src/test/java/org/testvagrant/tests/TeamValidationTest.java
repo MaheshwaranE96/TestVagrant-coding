@@ -17,10 +17,12 @@ public class TeamValidationTest {
     @Test(description = "This test is to validate that the team has only 4 foreign players")
     public void validateForeignPlayersCount(){
         try{
+            Reporter.log("Total number of players in team is: "+listOfPlayers.size(), true);
             int foreignPlayersCount = 0;
             for (LinkedHashMap player : listOfPlayers)
-                if (!player.get("country").toString().trim().equalsIgnoreCase("india"))
+                if (!player.get("country").toString().trim().equalsIgnoreCase("india")) {
                     foreignPlayersCount++;
+                }
             Assert.assertEquals(foreignPlayersCount, 4, "The team has more/less than 4 foreign players");
             Reporter.log("The team has only 4 foreign players as expected", true);
         }catch (Exception e){
@@ -32,6 +34,7 @@ public class TeamValidationTest {
     @Test(description = "This test is to validate that the team has at least one wicket keeper")
     public void validateWicketKeeperCount(){
         try{
+            Reporter.log("Total number of players in team is: "+listOfPlayers.size(), true);
             int wicketKeeperCount = 0;
             for (LinkedHashMap player : listOfPlayers)
                 if (player.get("role").toString().trim().equalsIgnoreCase("wicket-keeper"))
